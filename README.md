@@ -2,22 +2,22 @@
 
 This project analyzes customer behavior data from an Indian telecommunications company to predict customer attrition (Churn). [cite_start]Using a dataset of **104,143 records**, this repository documents the full data science workflow in **R**: from data cleaning and Exploratory Data Analysis (EDA) to feature selection (PCA & Entropy) and Logistic Regression modeling[cite: 28, 191].
 
-## 🎯 Project Objective
+## Project Objective
 The main goal is to develop a binary classification model to:
 1.  Identify key variables influencing a customer's decision to leave.
 2.  [cite_start]Predict churn probability (`is_churned`) to enable preventative actions[cite: 29].
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **Language:** R
 * **Key Libraries:** `tidyverse`, `caret`, `ggplot2`, `pROC`, `FSelectorRcpp`, `corrplot`.
 * **Techniques:** PCA (Principal Component Analysis), IGA (Information Gain Analysis), Logistic Regression, Threshold Tuning.
 
-## 📊 Dataset Description
+## Dataset Description
 [cite_start]The dataset contains 18 variables (15 numeric, 2 categorical, 1 logical)[cite: 191].
 * **Target Variable:** `is_churned` (0: Retained, 1: Churned).
 * [cite_start]**Class Imbalance:** 71.3% of users are retained, while 28.7% churned[cite: 333].
 
-## ⚙️ Methodology
+## Methodology
 
 ### 1. Cleaning & Preprocessing
 * [cite_start]**Imputation:** Null values in numeric variables were replaced with the **median** due to skewed distributions[cite: 211, 218].
@@ -39,7 +39,7 @@ Two models were trained and compared:
 * [cite_start]**Model 1 (PCA-based):** Features selected based on their impact on principal components (e.g., `is_churned`, `reward_purchase`, `first_payment`, `age`, `is_referral`, etc.)[cite: 1793].
 * [cite_start]**Model 2 (IGA-based):** Features selected based on Information Gain[cite: 1804].
 
-## 📈 Results & Performance
+## Results & Performance
 
 **Threshold Tuning:** A standard threshold of 0.5 resulted in the model predicting "No Churn" for almost everyone. [cite_start]The decision threshold was lowered to **0.30** to improve the detection of the minority class (Churn)[cite: 1794, 1795].
 
@@ -53,10 +53,10 @@ Two models were trained and compared:
 | **Specificity** | 61.11% | [cite_start]Ability to correctly identify retained users[cite: 1802]. |
 | **AUC** | 0.662 | [cite_start]Area Under the ROC Curve[cite: 1802]. |
 
-## 📝 Conclusion
+## Conclusion
 [cite_start]While Model 2 achieved higher specificity (79%), it failed to detect churners effectively (Sensitivity ~48%)[cite: 1815]. Model 1 is the superior choice for business application because identifying potential churners is the priority. [cite_start]The analysis highlights that transactional behavior (first payments, rewards) and referral status are critical indicators of customer retention[cite: 1819].
 
-## 🚀 How to Run
+## How to Run
 1.  Clone this repository.
 2.  Open the script in RStudio.
 3.  Install required packages:
