@@ -21,7 +21,7 @@ The dataset contains 18 variables (15 numeric, 2 categorical, 1 logical).
 
 ### 1. Cleaning & Preprocessing
 * **Imputation:** Null values in numeric variables were replaced with the **median** due to skewed distributions.
-* **Transformation:** Binary and categorical variables were converted to factors; the `user_id` column was dropped.
+* **Transformation:** Binary and categorical variables were converted to factors.
 
 ### 2. Exploratory Data Analysis (EDA)
 Key insights discovered during analysis:
