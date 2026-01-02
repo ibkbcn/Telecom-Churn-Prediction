@@ -13,26 +13,26 @@ The main goal is to develop a binary classification model to:
 * **Techniques:** PCA (Principal Component Analysis), IGA (Information Gain Analysis), Logistic Regression, Threshold Tuning.
 
 ## Dataset Description
-The dataset contains 18 variables (15 numeric, 2 categorical, 1 logical)[cite: 191].
+The dataset contains 18 variables (15 numeric, 2 categorical, 1 logical).
 * **Target Variable:** `is_churned` (0: Retained, 1: Churned).
-* **Class Imbalance:** 71.3% of users are retained, while 28.7% churned[cite: 333].
+* **Class Imbalance:** 71.3% of users are retained, while 28.7% churned.
 
 ## Methodology
 
 ### 1. Cleaning & Preprocessing
-* **Imputation:** Null values in numeric variables were replaced with the **median** due to skewed distributions[cite: 211, 218].
-* **Transformation:** Binary and categorical variables were converted to factors; the `user_id` column was dropped[cite: 243, 246].
+* **Imputation:** Null values in numeric variables were replaced with the **median** due to skewed distributions.
+* **Transformation:** Binary and categorical variables were converted to factors; the `user_id` column was dropped.
 
 ### 2. Exploratory Data Analysis (EDA)
 Key insights discovered during analysis:
-* **Referrals:** Counter-intuitively, users who were referred (`is_referral = TRUE`) had a **higher churn rate (34.6%)** compared to non-referred users (24.5%)[cite: 1783].
-* **Permissions:** Users who denied permissions (`given_permission_1`) showed higher abandonment rates (37.5%)[cite: 1784].
-* **Age:** Churned users tended to be slightly older than retained users[cite: 822].
+* **Referrals:** Counter-intuitively, users who were referred (`is_referral = TRUE`) had a **higher churn rate (34.6%)** compared to non-referred users (24.5%).
+* **Permissions:** Users who denied permissions (`given_permission_1`) showed higher abandonment rates (37.5%).
+* **Age:** Churned users tended to be slightly older than retained users.
 
 ### 3. Feature Selection
 Since direct correlations were weak, two statistical approaches were used to select variables:
-* **PCA (Principal Component Analysis):** Selected 8 components explaining **81% of the variance**[cite: 1788].
-* **Entropy (Information Gain):** Identified transactional variables (payments and rewards) as the most information-rich features[cite: 1277].
+* **PCA (Principal Component Analysis):** Selected 8 components explaining **81% of the variance**.
+* **Entropy (Information Gain):** Identified transactional variables (payments and rewards) as the most information-rich features.
 
 ### 4. Modeling (Logistic Regression)
 Two models were trained and compared:
