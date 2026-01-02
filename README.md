@@ -1,11 +1,11 @@
 # Telecom-Churn-Prediction
 
-This project analyzes customer behavior data from an Indian telecommunications company to predict customer attrition (Churn). Using a dataset of **104,143 records**, this repository documents the full data science workflow in **R**: from data cleaning and Exploratory Data Analysis (EDA) to feature selection (PCA & Entropy) and Logistic Regression modeling[cite: 28, 191].
+This project analyzes customer behavior data from an Indian telecommunications company to predict customer attrition (Churn). Using a dataset of **104,143 records**, this repository documents the full data science workflow in **R**: from data cleaning and Exploratory Data Analysis (EDA) to feature selection (PCA & Entropy) and Logistic Regression modeling.
 
 ## Project Objective
 The main goal is to develop a binary classification model to:
 1.  Identify key variables influencing a customer's decision to leave.
-2.  Predict churn probability (`is_churned`) to enable preventative actions[cite: 29].
+2.  Predict churn probability (`is_churned`) to enable preventative actions.
 
 ## Tech Stack
 * **Language:** R
@@ -36,31 +36,23 @@ Since direct correlations were weak, two statistical approaches were used to sel
 
 ### 4. Modeling (Logistic Regression)
 Two models were trained and compared:
-* **Model 1 (PCA-based):** Features selected based on their impact on principal components (e.g., `is_churned`, `reward_purchase`, `first_payment`, `age`, `is_referral`, etc.)[cite: 1793].
-* **Model 2 (IGA-based):** Features selected based on Information Gain[cite: 1804].
+* **Model 1 (PCA-based):** Features selected based on their impact on principal components (e.g., `is_churned`, `reward_purchase`, `first_payment`, `age`, `is_referral`, etc.).
+* **Model 2 (IGA-based):** Features selected based on Information Gain.
 
 ## Results & Performance
 
-**Threshold Tuning:** A standard threshold of 0.5 resulted in the model predicting "No Churn" for almost everyone. The decision threshold was lowered to **0.30** to improve the detection of the minority class (Churn)[cite: 1794, 1795].
+**Threshold Tuning:** A standard threshold of 0.5 resulted in the model predicting "No Churn" for almost everyone. The decision threshold was lowered to **0.30** to improve the detection of the minority class (Churn).
 
 **Selected Model: Model 1**
-Model 1 was chosen over Model 2 because it offered a better balance between Sensitivity and Specificity, avoiding extreme bias toward the majority class[cite: 1817].
+Model 1 was chosen over Model 2 because it offered a better balance between Sensitivity and Specificity, avoiding extreme bias toward the majority class.
 
 | Metric (Test Set) | Value | Interpretation |
 | :--- | :--- | :--- |
-| **Accuracy** | 61.96% | Overall correctness of the model[cite: 1802]. |
-| **Sensitivity** | 62.30% | Ability to correctly identify churners[cite: 1802]. |
-| **Specificity** | 61.11% | Ability to correctly identify retained users[cite: 1802]. |
-| **AUC** | 0.662 | Area Under the ROC Curve[cite: 1802]. |
+| **Accuracy** | 61.96% | Overall correctness of the model. |
+| **Sensitivity** | 62.30% | Ability to correctly identify churners. |
+| **Specificity** | 61.11% | Ability to correctly identify retained users. |
+| **AUC** | 0.662 | Area Under the ROC Curve. |
 
 ## Conclusion
-While Model 2 achieved higher specificity (79%), it failed to detect churners effectively (Sensitivity ~48%)[cite: 1815]. Model 1 is the superior choice for business application because identifying potential churners is the priority. The analysis highlights that transactional behavior (first payments, rewards) and referral status are critical indicators of customer retention[cite: 1819].
+While Model 2 achieved higher specificity (79%), it failed to detect churners effectively (Sensitivity ~48%). Model 1 is the superior choice for business application because identifying potential churners is the priority. The analysis highlights that transactional behavior (first payments, rewards) and referral status are critical indicators of customer retention.
 
-## How to Run
-1.  Clone this repository.
-2.  Open the script in RStudio.
-3.  Install required packages:
-    ```r
-    install.packages(c("tidyverse", "caret", "pROC", "corrplot", "FSelectorRcpp"))
-    ```
-4.  Run the script to reproduce the cleaning, visualization, and modeling steps.
