@@ -56,6 +56,27 @@ Model 1 was chosen over Model 2 because it offered a better balance between Sens
 ## Conclusions
 While Model 2 achieved higher specificity (79%), it failed to detect churners effectively (Sensitivity ~48%). Model 1 is the superior choice for business application because identifying potential churners is the priority. The analysis highlights that transactional behavior (first payments, rewards) and referral status are critical indicators of customer retention.
 
+## Strategic Recommendations
+
+While the predictive capabilities of the model are currently limited (AUC ~0.66), the **statistical analysis and feature importance study** uncovered strong behavioral drivers. The following strategies address the root causes of churn identified in the historical data:
+
+### 1. Optimization of the Entry Barrier ("First Payment")
+**Insight:** Exploratory analysis shows a friction point where low-commitment users (paying 0-2 units) exhibit a churn rate of **53%**, compared to **25%** for those paying slightly more.
+**Strategic Action:** Instead of outright eliminating entry-level tiers, we recommend recalibrating the Value Ladder:
+* **Upsell Focus:** Keep the low-entry tier but aggressively incentivize an immediate small upgrade (e.g., a "Starter Pack" at 2.5 units) during sign-up to nudge users into the "safe zone" of retention.
+* **Quality Filter:** If the cost of serving users is high (CAC), consider raising the minimum entry price to filter out low-value users early, prioritizing unit economics over volume.
+
+### 2. Activation through Engagement ("The Hook")
+**Insight:** Feature importance algorithms (Information Gain) identified rewards engagement as a top retention driver. Non-churners redeem almost **3x more coins** than churners on average.
+**Strategic Action:** Revamp the Onboarding Journey to **encourage** early ecosystem interaction:
+* **"Quick Win" Strategy:** Design the first week so that redeeming a reward is effortless (e.g., "Welcome Bonus: Redeem your first gift now").
+* **Educational Nudge:** Use in-app tutorials to guide users to the rewards section, creating a habit loop within the crucial first week.
+
+### 3. Referral Program Restructuring
+**Insight:** Historical data confirms that referred users have a **34.6% churn rate** vs. 24.5% for organic users, indicating a quality issue with incentivized leads.
+**Strategic Action:** Shift from "immediate payout" to "milestone-based" referral bonuses (e.g., reward the referrer only after the new user remains active for 1 month). This aligns incentives with user quality rather than quantity.
+
+
 ## Limitations
 This project provides a baseline for churn prediction, but several constraints were identified during the analysis:
 
