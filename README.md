@@ -56,3 +56,8 @@ Model 1 was chosen over Model 2 because it offered a better balance between Sens
 ## Conclusion
 While Model 2 achieved higher specificity (79%), it failed to detect churners effectively (Sensitivity ~48%). Model 1 is the superior choice for business application because identifying potential churners is the priority. The analysis highlights that transactional behavior (first payments, rewards) and referral status are critical indicators of customer retention.
 
+## Limitations
+
+## Future Improvements
+
+
