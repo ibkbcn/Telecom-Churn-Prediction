@@ -57,7 +57,34 @@ Model 1 was chosen over Model 2 because it offered a better balance between Sens
 While Model 2 achieved higher specificity (79%), it failed to detect churners effectively (Sensitivity ~48%). Model 1 is the superior choice for business application because identifying potential churners is the priority. The analysis highlights that transactional behavior (first payments, rewards) and referral status are critical indicators of customer retention.
 
 ## Limitations
+This project provides a baseline for churn prediction, but several constraints were identified during the analysis:
+
+Low Predictive Power: The Logistic Regression model achieved an AUC of approx. 0.66 - 0.73. This indicates that the model has limited ability to distinguish between churners and non-churners effectively, performing only slightly better than random guessing in some configurations.
+
+Weak Linear Correlations: The correlation analysis (Spearman) revealed that none of the explanatory variables had a strong direct correlation with the target variable is_churned. This suggests the relationships in the data might be non-linear, which Logistic Regression struggles to capture.
+
+Data Imbalance: The dataset is heavily imbalanced (71% retained vs. 29% churn). Even with threshold tuning, the model tends to favor the majority class (Specificity ~79%) while struggling to identify the minority class (Sensitivity ~48%).
+
+Skewed Distributions: Most numeric variables were highly right-skewed with many outliers. While nulls were imputed, the extreme outliers may still introduce noise into linear models.
+
+Demographic Bias: The user base is concentrated in a young demographic (IQR 28-35 years old), which may limit the model's ability to generalize to older customer segments.
+
+
 
 ## Future Improvements
+To improve model performance and business utility, the following steps are recommended:
 
+Try Non-Linear Models: Since linear correlations were weak, implementing tree-based algorithms like Random Forest, XGBoost, or LightGBM could better capture complex, non-linear patterns and interactions between variables.
+
+Advanced Balancing Techniques: Instead of simple threshold tuning (moving from 0.5 to 0.3), implementing synthetic oversampling techniques like SMOTE (Synthetic Minority Over-sampling Technique) or ADASYN during training could help the model learn the minority class features more effectively.
+
+Deep Feature Engineering:
+
+Create interaction variables (e.g., rewards_claimed / payments_completed ratio).
+
+Binning the age variable or outliers to reduce noise.
+
+Investigate the "Referral Paradox": The analysis showed that referred users have a higher churn rate (34.6%) than non-referred users. A qualitative study or A/B testing is needed to understand if the referral incentives attract low-quality users who leave once the reward is consumed.
+
+Hyperparameter Optimization: While standard Logistic Regression was used, applying Grid Search or Bayesian Optimization  to penalized models (Lasso/Ridge) or the tree-based models mentioned above would likely yield better accuracy.
 
