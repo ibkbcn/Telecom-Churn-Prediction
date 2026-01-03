@@ -53,7 +53,7 @@ Model 1 was chosen over Model 2 because it offered a better balance between Sens
 | **Specificity** | 61.11% | Ability to correctly identify retained users. |
 | **AUC** | 0.662 | Area Under the ROC Curve. |
 
-## Conclusion
+## Conclusions
 While Model 2 achieved higher specificity (79%), it failed to detect churners effectively (Sensitivity ~48%). Model 1 is the superior choice for business application because identifying potential churners is the priority. The analysis highlights that transactional behavior (first payments, rewards) and referral status are critical indicators of customer retention.
 
 ## Limitations
