@@ -63,7 +63,7 @@ While the predictive capabilities of the model are currently limited (AUC ~0.66)
 ### 1. Optimization of the Entry Barrier ("First Payment")
 **Insight:** Exploratory analysis shows a friction point where low-commitment users (paying 0-2 units) exhibit a churn rate of **53%**, compared to **25%** for those paying slightly more.
 **Strategic Action:** Instead of outright eliminating entry-level tiers, we recommend recalibrating the Value Ladder:
-* **Upsell Focus:** Keep the low-entry tier but aggressively incentivize an immediate small upgrade (e.g., a "Starter Pack" at 2.5 units) during sign-up to nudge users into the "safe zone" of retention.
+* **Upsell Focus:** Keep the low-entry tier but aggressively incentivize an immediate small upgrade (e.g., a "Starter Pack" at 3 units) during sign-up to nudge users into the "safe zone" of retention.
 * **Quality Filter:** If the cost of serving users is high (CAC), consider raising the minimum entry price to filter out low-value users early, prioritizing unit economics over volume.
 
 ### 2. Activation through Engagement ("The Hook")
