@@ -80,22 +80,20 @@ While the predictive capabilities of the model are currently limited (AUC ~0.66)
 ## Limitations
 This project provides a baseline for churn prediction, but several constraints were identified during the analysis:
 
-Low Predictive Power: The Logistic Regression model achieved an AUC of 0.66. This indicates that the model has limited ability to distinguish between churners and non-churners effectively, performing only slightly better than random guessing in some configurations.
+**Low Predictive Power:** The Logistic Regression model achieved an AUC of 0.66. This indicates that the model has limited ability to distinguish between churners and non-churners effectively, performing only slightly better than random guessing in some configurations.
 
-Weak Linear Correlations: The correlation analysis (Spearman) revealed that none of the explanatory variables had a strong direct correlation with the target variable is_churned. This suggests the relationships in the data might be non-linear, which Logistic Regression struggles to capture.
+**Weak Linear Correlations:** The correlation analysis (Spearman) revealed that none of the explanatory variables had a strong direct correlation with the target variable is_churned. This suggests the relationships in the data might be non-linear, which Logistic Regression struggles to capture.
 
-Skewed Distributions: Most numeric variables were highly right-skewed with many outliers. While nulls were imputed, the extreme outliers may still introduce noise into linear models.
+**Skewed Distributions:** Most numeric variables were highly right-skewed with many outliers. While nulls were imputed, the extreme outliers may still introduce noise into linear models.
 
-Demographic Bias: The user base is concentrated in a young demographic (IQR 28-35 years old), which may limit the model's ability to generalize to older customer segments.
+**Demographic Bias:** The user base is concentrated in a young demographic (IQR 28-35 years old), which may limit the model's ability to generalize to older customer segments.
 
 
 
 ## Future Improvements
 To improve model performance and business utility, the following steps are recommended:
 
-Try Non-Linear Models: Since linear correlations were weak, implementing tree-based algorithms like Random Forest, XGBoost, or LightGBM could better capture complex, non-linear patterns and interactions between variables.
+**Try Non-Linear Models:** Since linear correlations were weak, implementing tree-based algorithms like Random Forest, XGBoost, or LightGBM could better capture complex, non-linear patterns and interactions between variables.
 
-Advanced Balancing Techniques: Instead of simple threshold tuning (moving from 0.5 to 0.3), implementing synthetic oversampling techniques like SMOTE (Synthetic Minority Over-sampling Technique) or ADASYN during training could help the model learn the minority class features more effectively.
-
-Investigate the "Referral Paradox": The analysis showed that referred users have a higher churn rate (34.6%) than non-referred users. A qualitative study or A/B testing is needed to understand if the referral incentives attract low-quality users who leave once the reward is consumed.
+**Advanced Balancing Techniques:** Instead of simple threshold tuning (moving from 0.5 to 0.3), implementing synthetic oversampling techniques like SMOTE (Synthetic Minority Over-sampling Technique) or ADASYN during training could help the model learn the minority class features more effectively.
 
