@@ -36,7 +36,7 @@ Since direct correlations were weak, two statistical approaches were used to sel
 
 ### 4. Modeling (Logistic Regression)
 Two models were trained and compared:
-* **Model 1 (PCA-based):** Features selected based on their impact on principal components (e.g., `is_churned`, `reward_purchase`, `first_payment`, `age`, `is_referral`, etc.).
+* **Model 1 (PCA-based):** Features selected based on their impact on principal components (e.g., `reward_purchase`, `first_payment`, `age`, `is_referral`, etc.).
 * **Model 2 (IGA-based):** Features selected based on Information Gain.
 
 ## Results & Performance
