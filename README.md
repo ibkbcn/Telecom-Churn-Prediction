@@ -76,7 +76,11 @@ While the predictive capabilities of the model are currently limited (AUC ~0.66)
 **Insight:** Historical data confirms that referred users have a **34.6% churn rate** vs. 24.5% for organic users, indicating a quality issue with incentivized leads.
 **Strategic Action:** Shift from "immediate payout" to "milestone-based" referral bonuses (e.g., reward the referrer only after the new user remains active for 1 month). This aligns incentives with user quality rather than quantity.
 
-### 4. UX Optimization: Permission Priming **Insight:** Users who deny `given_permission_1` exhibit a significantly higher churn rate (**37.5%**) compared to those who grant it (**27.1%**). While the specific permission type is unlabeled, its high correlation with retention strongly suggests it enables critical communication channels (like **Push Notifications**). **Strategic Action:** Replace system-default permission requests with **"Contextual Priming"**: * **The "Ask":** Do not trigger the permission dialog immediately upon install (Cold Start). * **The "Context":** Request it only *after* the user performs an action that benefits from it (e.g., *"Enable notifications to track your reward status"*). Explaining the *value* before the *request* typically doubles opt-in rates.
+### 4. UX Optimization: Permission Priming
+**Insight:** Users who deny `given_permission_1` exhibit a significantly higher churn rate (**37.5%**) compared to those who grant it (**27.1%**). While the specific permission type is unlabeled, its high correlation with retention strongly suggests it enables critical communication channels (like **Push Notifications**).
+**Strategic Action:** Replace system-default permission requests with **"Contextual Priming"**:
+* **The "Ask":** Do not trigger the permission dialog immediately upon install (Cold Start).
+* **The "Context":** Request it only *after* the user performs an action that benefits from it (e.g., *"Enable notifications to track your reward status"*). Explaining the *value* before the *request* typically doubles opt-in rates.
 
 
 ## Limitations
