@@ -90,8 +90,6 @@ This project provides a baseline for churn prediction, but several constraints w
 
 * **Weak Linear Correlations:** The correlation analysis (Spearman) revealed that none of the explanatory variables had a strong direct correlation with the target variable is_churned. This suggests the relationships in the data might be non-linear, which Logistic Regression struggles to capture.
 
-* **Skewed Distributions:** Most numeric variables were highly right-skewed with many outliers. While nulls were imputed, the extreme outliers may still introduce noise into linear models.
-
 * **Demographic Bias:** The user base is concentrated in a young demographic (IQR 28-35 years old), which may limit the model's ability to generalize to older customer segments.
 
 
