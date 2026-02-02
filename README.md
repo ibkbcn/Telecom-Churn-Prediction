@@ -44,7 +44,7 @@ Two models were trained and compared:
 **Threshold Tuning:** A standard threshold of 0.5 resulted in the model predicting "No Churn" for almost everyone. The decision threshold was lowered to **0.30** to improve the detection of the minority class (Churn).
 
 **Selected Model: Model 1**
-Model 1 was chosen over Model 2 because it offered a better balance between Sensitivity and Specificity, avoiding extreme bias toward the majority class.
+was chosen over Model 2 because it offered a better balance between Sensitivity and Specificity, avoiding extreme bias toward the majority class.
 
 | Metric (Test Set) | Value | Interpretation |
 | :--- | :--- | :--- |
