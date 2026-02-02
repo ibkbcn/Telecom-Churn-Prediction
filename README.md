@@ -25,7 +25,7 @@ The dataset contains 18 variables (15 numeric, 2 categorical, 1 logical).
 
 ### 2. Exploratory Data Analysis (EDA)
 Key insights discovered during analysis:
-* **Referrals:** Counter-intuitively, users who were referred (`is_referral = TRUE`) had a **higher churn rate (34.6%)** compared to non-referred users (24.5%).
+* **Referrals:** Users who were referred (`is_referral = TRUE`) had a **higher churn rate (34.6%)** compared to non-referred users (24.5%).
 * **Permissions:** Users who denied permissions (`given_permission_1`) showed higher abandonment rates (37.5%).
 * **Age:** Churned users tended to be slightly older than retained users.
 
